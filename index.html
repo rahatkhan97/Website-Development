@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<htmL>
+<head><title>Rock Papper Scissor </title> </head>
+
+<body>
+
+<div style="text-align: center;">
+<h1>Pick One And Then Computer Play</h1>
+
+<h2>  Rock |  Paper | Scissors </h2>
+<br>
+<button onclick="choose()" >
+Computer Turn </button>
+<button onclick="resetall()" >
+Rest </button>
+
+
+<script>
+	
+
+	function resetall()
+	{
+		alert("All has been Reset !");
+		element0.style.opacity="1.0";
+ 		element0.style.filter ='alpha(opacity=100)';
+ 		element1.style.opacity="1.0";
+ 		element1.style.filter ='alpha(opacity=100)';
+ 		element2.style.opacity="1.0";
+ 		element2.style.filter ='alpha(opacity=100)';
+	}
+</script>
+
+<br>
+
+<img src="images/rock.png" id="rock"/>
+<img src="images/paper.png" id="paper"/>
+<img src="images/scissors.png" id="scissors"/>
+</div>
+
+<br>
+
+
+
+<!-- This code allows alert boxes to show up when you click on images -->
+<script>
+var element0 = document.getElementById('rock');
+var element1= document.getElementById('paper');
+var element2= document.getElementById('scissors');
+
+  var compChoice = 0; // Computer's choice
+  var userChoice = null; // User's choice, initially null
+
+ window.onload = function() {
+ 	document.getElementById("rock").onclick= function(){
+ 		alert("You chose Rock !") ;
+ 		userChoice=0;  //assigning userChoice to Rock
+ 		element1.style.opacity="0.3";
+ 		element1.style.filter ='alpha(opacity=30)';
+ 		element2.style.opacity="0.3";
+ 		element2.style.filter ='alpha(opacity=30)';
+ 	};	
+ 	document.getElementById("paper").onclick= function(){
+ 		alert("You chose Paper !") ;
+ 		userChoice=1;    //assigning userChoice to Paper
+ 		element0.style.opacity="0.3";
+ 		element0.style.filter ='alpha(opacity=30)';
+ 		element2.style.opacity="0.3";
+ 		element2.style.filter ='alpha(opacity=30)';
+ 	};	
+ 	document.getElementById("scissors").onclick= function(){
+ 		alert("You chose Scissors !") ;
+ 		userChoice=2;      //assigning userChoice to Scissors
+ 		element0.style.opacity="0.3";
+ 		element0.style.filter ='alpha(opacity=30)';
+ 		element1.style.opacity="0.3";
+ 		element1.style.filter ='alpha(opacity=30)';
+ 	};	
+};
+</script>
+
+<script>
+ 
+
+
+ function choose(){
+ 	compChoice =Math.floor(Math.random() * 3);
+
+ 
+ 	if(compChoice==0)
+ 		alert("I choose Rock");
+ 	else if(compChoice==1)
+ 		alert("I choose Paper");
+ 	else if(compChoice==2)
+ 		alert("I choose Scissors");
+
+
+        //Three Tie Cases
+
+ 	if(compChoice==0 && userChoice==0)
+ 		alert("Computer and User both choose Rock . Tie!  ");   
+
+	else if(compChoice==1 && userChoice==1)
+ 		alert("Computer and User both choose Paper . Tie!  ");
+
+ 	else if(compChoice==2 && userChoice==2)
+ 		alert("Computer and User both choose Scissors . Tie!  ");
+
+
+
+           //Three Cases when Computer win 
+
+	else if(compChoice==0 && userChoice==1)
+ 		alert("Computer choose Rock , User choose Paper , User Wins ! ");
+
+ 	else if(compChoice==1 && userChoice==2)
+ 		alert("Computer choose Paper , User choose Scissors , User Wins ! ");
+
+
+ 	else if(compChoice==2 && userChoice==0)
+ 		alert("Computer choose Scissors , User choose Rock , User Wins ! ");
+
+
+
+
+            //Three Cases when User win 
+
+ 	else if(compChoice==0 && userChoice==2)
+ 		alert("Computer choose Rock , User choose Scissors , Computer Wins ! ");
+
+ 	else if(compChoice==1 && userChoice==0)
+ 		alert("Computer choose Paper , User choose Rock , Computer Wins ! ");
+
+ 	else if(compChoice==2 && userChoice==1)
+ 		alert("Computer choose Scissors , User choose Paper , Computer Wins ! ");
+
+ 
+
+
+ }
+
+
+</script>
+
+
+
+</body>
+</htmL>
